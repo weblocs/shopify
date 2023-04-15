@@ -23,6 +23,25 @@
       </head>
       <body>
       <body class="body" ><div ><div class="navbar" ><div class="container" ><div class="navbar_wrapper" ><a href="/" ><div ><img class="navbar_logo" src='{{ '644df82d-25df-4fc6-b0b8-281885471b0b-logoipsum-286.svg' | asset_url }} 'alt='undefined' loading="lazy" sizes="(max-width: 600px) 96vw, 700px" width='undefined' height='undefined' ></img></div></a><div class="navbar_mobile-trigger" nav-trigger ><img class="navbar_open-icon" src='{{ '6d408a15-c4a7-498f-b47e-ac65bfee4480-menu.svg' | asset_url }} 'alt='undefined' loading="lazy" sizes="(max-width: 600px) 96vw, 700px" width='undefined' height='undefined' ></img></div><div class="navbar_link-list" nav-list ><a class="navbar_link" href="/kalendarium" >Certyfikacje</a><a class="navbar_link" href="/kalendarium" >Edukcja</a><a class="navbar_link" href="/kalendarium" >Usługi IT</a><a class="navbar_link" href="/o-nas" >O nas</a><a class="navbar_link" href="/kalendarium" >Kontakt</a><a class="button  size-small" href="/certyfikacje" >Kalendarium szkoleń</a></div></div></div></div></div><div class="section background-gray" ><div class="container " ><div class="hero-grid " ><img class="image height-420 fit-cover   mobile-height-180" src='{{ product.featured_media | image_url: width: 720 }}' 'alt='undefined' loading="eager" sizes="(max-width: 600px) 96vw, 700px" width='undefined' height='undefined' ></img><div class="hero-content" ><div ><h2 class="heading size-heading-2  width-524" >{{ product.title }}</h2><h2 class="tagline" >{{ product.price | money }}</h2><p class="paragraph   " >{{ product.description }}</p></div><div class="button-wrapper" >
+
+        addToCart(){
+          let formData = new FormData(document.querySelector('#{{ product.handle }}'));
+          fetch('/cart/add.js', {
+              method: 'POST',
+              body: formData
+            })
+            .then(response => {
+              return response.json();
+            })
+            // .then(response => {
+            //   this.$dispatch('cart-updated');
+            //   this.$dispatch('toggle-cart');
+            // })
+            .catch((error) => {
+              console.error('Error:', error);
+            });
+        }
+
         {%- if product != blank -%}
         {%- form 'product',
         product,
@@ -42,6 +61,7 @@
             id = "ProductSubmitButton-{{ product.handle }}"
             type="submit"
             name="add"
+            onclick="addToCart()"
             class="button type-secondary"
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
