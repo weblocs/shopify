@@ -48,8 +48,7 @@
         >
         <button
             id="ProductSubmitButton-{{ product.handle }}"
-            type="button"
-            onclick="addToCart()"
+            type="submit"
             name="add"
             class="button type-secondary"
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
@@ -82,10 +81,10 @@
         {%- endif -%}
 
         <script>
-        function addToCart() {
-          let addToCartForm = document.querySelector('.form');
+        let addToCartForm = document.querySelector('.form');
+        addToCartForm.addEventListener('submit', (event) => {
           let formData = new FormData(addToCartForm);
-          
+          event.preventDefault();
           // let formData = {
           //   'items': [{
           //    'id': 46500481499481,
