@@ -82,10 +82,12 @@
 
         <script>
         function addToCart() {
-          let addToCartForm = document.querySelector('.form');
-          let formData = new FormData(addToCartForm);
-          formData.append("username", "Chris");
-          console.log(addToCartForm)
+          let formData = {
+ 'items': [{
+  'id': 36110175633573,
+  'quantity': 2
+  }]
+};
           console.log(formData)
 
           fetch(window.Shopify.routes.root + 'cart/add.js', {
