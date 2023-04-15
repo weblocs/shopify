@@ -96,14 +96,14 @@
           //    }]
           //  };
            
-           console.log(JSON.stringify(formData))
+           console.log(formData)
  
            fetch(window.Shopify.routes.root + 'cart/add.js', {
                method: 'POST',
                headers: {
                  'Content-Type': 'application/json'
                },
-               body: formData
+               body: JSON.stringify(formData)
              })
              .then(response => {
                console.log(response.json())
