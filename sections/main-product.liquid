@@ -85,7 +85,7 @@
           let formDataTemp = new FormData(addToCartForm);
           let formData = {items: []}
           formDataTemp.forEach((value, key) => {
-            if(key === 'quantity') { value = parseInt(value) }
+            if(key === 'quantity' || key === 'id') { value = parseInt(value) }
             if(key === 'quantity' || key === 'id') {
             formData.items.push({[key]: value})
             }
