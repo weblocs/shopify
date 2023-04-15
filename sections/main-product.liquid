@@ -29,7 +29,7 @@
         id: product.handle,
         class: 'form',
         novalidate: 'novalidate',
-        data-type: 'add-to-cart-form'
+        data-type: 'add-to-order-form'
       -%}
       <input
         type="number"
@@ -56,7 +56,7 @@
               {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 Sold out
               {%- else -%}
-                Add to cart
+                Add to order
               {%- endif -%}
             </span>
             <div class="loading-overlay__spinner hidden">
