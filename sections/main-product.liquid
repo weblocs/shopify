@@ -85,13 +85,14 @@
           event.preventDefault();
           
           let formData = new FormData(addToCartForm);
+          let tempFormData = {}
           formData.forEach((value, key) => {
-            formData.append({[key]: value})
+            tempFormData.append({[key]: value})
             
             console.log(key +': '+ value);
           });
           
-           console.log(formData)
+           console.log(tempFormData)
  
            fetch(window.Shopify.routes.root + 'cart/add.js', {
                method: 'POST',
