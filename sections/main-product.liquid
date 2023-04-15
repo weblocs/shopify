@@ -84,7 +84,8 @@
         addToCartForm.addEventListener('submit', (event) => {
           let formDataTemp = new FormData(addToCartForm);
           let formData = {items: []}
-          formData.forEach((value, key) => {
+          formDataTemp.forEach((value, key) => {
+            formData.items.push({[key]: value})
             console.log(key +': '+ value);
           });
           event.preventDefault();
