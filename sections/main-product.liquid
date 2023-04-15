@@ -87,7 +87,7 @@
           let formData = new FormData(addToCartForm);
           let tempFormData = {}
           formData.forEach((value, key) => {
-            tempFormData.append({[key]: value})
+            tempFormData.push({[key]: value})
             
             console.log(key +': '+ value);
           });
