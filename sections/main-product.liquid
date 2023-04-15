@@ -82,23 +82,15 @@
         <script>
         let addToCartForm = document.querySelector('.form');
         addToCartForm.addEventListener('submit', (event) => {
-          let formDataTemp = new FormData(addToCartForm);
-          let formData = {items: []}
-          formDataTemp.forEach((value, key) => {
-            if(key === 'quantity' || key === 'id') { value = parseInt(value) }
-            if(key === 'quantity' || key === 'id') {
-            formData.items.push({[key]: value})
+          event.preventDefault();
+          
+          let formData = new FormData(addToCartForm);
+          formData.forEach((value, key) => {
+            formData.append({[key]: value})
             }
             console.log(key +': '+ value);
           });
-          event.preventDefault();
-          // let formData = {
-          //   'items': [{
-          //    'id': 46500481499481,
-          //    'quantity': 2
-          //    }]
-          //  };
-           
+          
            console.log(formData)
  
            fetch(window.Shopify.routes.root + 'cart/add.js', {
