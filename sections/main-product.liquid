@@ -84,6 +84,9 @@
         let addToCartForm = document.querySelector('.form');
         addToCartForm.addEventListener('submit', (event) => {
           let formData = new FormData(addToCartForm);
+          formData.forEach((value, key) => {
+    console.log(key +': '+ value);
+  });
           event.preventDefault();
           // let formData = {
           //   'items': [{
