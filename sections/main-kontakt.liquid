@@ -14,6 +14,31 @@
       <meta name="description" content="undefined">
       <link href="../assets/images/644df82d-25df-4fc6-b0b8-281885471b0b-Fav.png" rel="shortcut icon" type="image/x-icon">
       <link href="../assets/images/644df82d-25df-4fc6-b0b8-281885471b0b-Fav 2.png" rel="apple-touch-icon">
+
+      <script>
+      const resetShowBtn = document.querySelector("[w_el='reset_show']")
+      const resetSection = document.querySelector("[w_el='reset_section']")
+      const resetHide = document.querySelector("[w_el='reset_hide']")
+      const loginSection = document.querySelector("[w_el='login_section']")
+
+      resetShowBtn.addEventListener('click', () => {
+        resetSection.classList.add('is-visible')
+        loginSection.classList.add('is-hidden')
+      })
+
+      resetHide.addEventListener('click', () => {
+        resetSection.classList.remove('is-visible')
+        loginSection.classList.remove('is-hidden')
+      })
+      </script>
+      <style>
+      [w_el='reset_section']:not(.is-visible) {
+        display: none;
+      }
+      [w_el='login_section'].is-hidden {
+        display: none;
+      }
+      </style>
   
       <style>
       a { color: #000; text-decoration: none; }
