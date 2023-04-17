@@ -27,17 +27,16 @@
         {%- form 'product',
         product,
         id: product.handle,
-        class: 'form',
         novalidate: 'novalidate',
         data-type: 'add-to-order-form'
       -%}
-      <input
-        w_el_val="product-quantity"
-        type="hidden"
-        name="quantity"
-        value="1"
-        class="product-quantity"
-      >
+        <input
+          w_el_val="product-quantity"
+          type="hidden"
+          name="quantity"
+          value="1"
+          class="product-quantity"
+        >
         <input
           type="hidden"
           name="id"
