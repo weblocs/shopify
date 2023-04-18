@@ -71,7 +71,7 @@
         </div><div class="orders_column" el='27f70bdf' >
         <div class="cart_quantity" >
         <p class="cart_quantity_button" w_el='quantity_decrease'>
-        -</p><input class="cart_quantity_input" name="" placeholder="1" w_el='quantity_input'type="undefined" >
+        -</p><input class="cart_quantity_input" name="" placeholder="1" w_el='quantity_input' type="undefined" value='{{ item.quantity }}' >
         </input><p class="cart_quantity_button" w_el='quantity_increase'>
         +</p></div><a el='603ff912' href="{{ item.url_to_remove }}" >
         Remove</a></div><div class="orders_column" >
@@ -118,4 +118,31 @@
         </img></a></div><div class="flex gap-16" >
         <a href="/undefined" >
         Polityka prywatności</a></div></div></div></div></div></body><script>document.querySelector('[nav-trigger]').addEventListener("click", function() {document.querySelector('[nav-list]').classList.toggle('is-open')});</script>
- </body></html>
+ <script>
+          const quantityIncrease = document.querySelector("[w_el='quantity_increase']")
+          const quantityDecrease = document.querySelector("[w_el='quantity_decrease']")
+          const quantityInput = document.querySelector("[w_el='quantity_input']")
+          const finalLinePrice = document.querySelector("[w_el='finalLinePrice']")
+          const cardTotalPrice = document.querySelector("[w_el='card_total_price']")
+          let quantity = quantityInput
+      
+          quantityIncrease.addEventListener('click', () => {
+            resetSection.classList.add('is-visible')
+            loginSection.classList.add('is-hidden')
+          })
+      
+          resetHide.addEventListener('click', () => {
+            resetSection.classList.remove('is-visible')
+            loginSection.classList.remove('is-hidden')
+          })
+          </script>
+          <style>
+          [w_el='reset_section']:not(.is-visible) {
+            display: none;
+          }
+          [w_el='login_section'].is-hidden {
+            display: none;
+          }
+        </script>
+      
+      </body></html>
