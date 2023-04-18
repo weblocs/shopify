@@ -38,32 +38,30 @@
         About</a><a class="navbar_link" href="/search" >
         Search</a><a class="button type-border-dark size-small" href="/search" >
         Get started</a><div el='68a618b3' >
-        <a href="{{ routes.search_url }}" >
+        <a href="{{ routes.routes.search_url }}" >
         <img class="cart-img" el='ad9d7aef' src='{{ '644df82d-25df-4fc6-b0b8-281885471b0b-search-interface-symbol.svg' | asset_url }} 'alt='undefined' loading="lazy" sizes="(max-width: 600px) 96vw, 700px" width='undefined' height='undefined' >
-        </img></a><a href="{{ routes.account_login_url }}" >
+        </img></a><a href="{{ routes.routes.account_login_url }}" >
         <img class="cart-img" src='{{ '644df82d-25df-4fc6-b0b8-281885471b0b-profile.svg' | asset_url }} 'alt='undefined' loading="lazy" sizes="(max-width: 600px) 96vw, 700px" width='undefined' height='undefined' >
-        </img></a><a class="cart-img_wrap" href="{{ routes.cart_url }}" >
+        </img></a><a class="cart-img_wrap" href="{{ routes.routes.cart_url }}" >
         <img class="cart-img" src='{{ '644df82d-25df-4fc6-b0b8-281885471b0b-shopping-bag (2).svg' | asset_url }} 'alt='undefined' loading="lazy" sizes="(max-width: 600px) 96vw, 700px" width='undefined' height='undefined' >
         </img><div class="cart-img_counter_wrap" >
         <p class="cart-count" >
         {{ cart.item_count }}</p></div></a></div></div></div></div></div></div><div class="section" w_el='login_section'>
         <div class="container align-center" >
         <h2 class="heading size-heading-2" el='26db840b' >
-        Log in</h2>{%- form 'customer_login', class:'sign-in_form' -%}
-          <input class="input" el='11762c71' name="customer[email]" placeholder="Email" type="email" >
+        Log in</h2>{%- form 'customer_login', class:'sign-in_form' -%} <input class="input" el='11762c71' name="customer[email]" placeholder="Email" type="email" >
         </input><div el='4de42ff3' >
         <input class="input" el='28efb332' name="customer[password]" placeholder="Password" type="password" >
         </input><p class="paragraph size-medium" el='667da1fa' w_el='reset_show'>
         Forgot password?</p></div><input class="button" name="" placeholder="" type="submit" value=Sign in >
         </input><div el='4de5e7dc' >
-        <a href="{{ account_register_url }}" >
+        <a href="{{ routes.account_register_url }}" >
         Create account</a></div>{%- endform -%} </div></div><div class="section" w_el='reset_section'>
         <div class="container align-center" >
         <div class="section_header  margin-small" >
         <h2 class="heading size-heading-2" >
         Reset your password</h2><p class="paragraph  width-420 " >
-        We will send you an email to reset your password</p></div>{%- form 'recover_customer_password', class:'sign-in_form' -%}
-          <input class="input" el='a9e93051' name="email" placeholder="Email" type="email" >
+        We will send you an email to reset your password</p></div>{%- form 'recover_customer_password', class:'sign-in_form' -%} <input class="input" el='a9e93051' name="email" placeholder="Email" type="email" >
         </input><input class="button" name="" placeholder="" type="submit" value=Submit >
         </input><div el='534ee55b' >
         <p class="paragraph size-medium" el='46dc2d83' w_el='reset_hide'>
