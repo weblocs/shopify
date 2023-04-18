@@ -164,8 +164,8 @@
                    'Content-Type': 'application/json'
                  },
                  body: JSON.stringify({items: [{
-                   id: item.getAttribute('product_id'),
-                   quantity: quantity
+                   id: parseFloat(item.getAttribute('product_id')),
+                   quantity: 0
                  }]})
                  })
                  .then(response => {
