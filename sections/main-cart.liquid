@@ -127,23 +127,56 @@
           const finalLinePrice = document.querySelector("[w_el='final_line_price']")
           const cardTotalPrice = document.querySelector("[w_el='card_total_price']")
 
+          function updateCartButton() {
+
+  // Fetch Cart JSON from Shopify
+  const cartJson = '/cart.js';
+  async function getCartJson() {
+    fetch(cartJson)
+      .then((res) => {
+        return res.json();
+      })
+
+      .then((data) => {
+
+        // Get Product Info from Shopify
+        let productInfo = data.items;
+        console.log(productInfo);
+
+        // Create URL Params Array
+        let urlParamsArray = [];
+
+        const createURL = () => {
+          productInfo.forEach(object => {
+            const urlParams = `${object.sku}.${object.quantity}`;
+            urlParamsArray.push(urlParams);
+          })
+        }
+        createURL()
+        console.log(urlParamsArray);
+
+        // Join URL Params into One String
+        let urlParamsJoin = urlParamsArray.join('_');
+        console.log(urlParamsJoin);
+
+        // Get Checkout Button from Cart
+        const checkoutBtn = document.querySelector('.cart__submit');
+        console.log(checkoutBtn);
+
+        // Add URL Params to Checkout Button
+        checkoutBtn.href = `https://cleannutra.pay.clickbank.net/?cbskin=38436&cbitems=` + `${urlParamsJoin}`;
+      });
+  }
+  
+}
+
+
           quantityIncrease.forEach((item) => {
+            updateCartButton();
             item.addEventListener('click', () => {
               let quantity = item.parentElement.querySelector("[w_el='quantity_input']").value;
               quantity++;
               item.parentElement.querySelector("[w_el='quantity_input']").value = quantity;
-
-              fetch(`{{ routes.cart_url }}`)
-              .then((response) => console.log(response.text()))
-              // .then((responseText) => {
-              //   const html = new DOMParser().parseFromString(responseText, 'text/html');
-              //   const sourceQty = html.querySelector('cart-items');
-              //   this.innerHTML = sourceQty.innerHTML;
-              // })
-              .catch((e) => {
-                console.error(e);
-              });
-              
             });
           });
 
