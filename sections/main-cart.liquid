@@ -129,9 +129,9 @@
 
           quantityIncrease.forEach((item) => {
             item.addEventListener('click', () => {
-              let quantity = item.closest.querySelector("[w_el='quantity_input']").value;
+              let quantity = item.closest("[w_el='quantity_input']").value;
               quantity++;
-              item.closest.querySelector("[w_el='quantity_input']").value = quantity;
+              item.closest("[w_el='quantity_input']").value = quantity;
             });
           });
           
