@@ -72,7 +72,7 @@
         <div class="cart_quantity" >
         <p class="cart_quantity_button" w_el='quantity_decrease'>
         -</p><input class="cart_quantity_input" name="" placeholder="1" w_el='quantity_input' type="undefined" value='{{ item.quantity }}' >
-        </input><p class="cart_quantity_button" w_el='quantity_increase'>
+        </input><p class="cart_quantity_button" w_el='quantity_increase' product_id='{{ item.id }}'>
         +</p></div><a el='603ff912' href="{{ item.url_to_remove }}" >
         Remove</a></div><div class="orders_column" >
         <p class="paragraph " w_el='final_line_price'>
@@ -126,6 +126,8 @@
           const quantityInput = document.querySelector("[w_el='quantity_input']")
           const finalLinePrice = document.querySelector("[w_el='final_line_price']")
           const cardTotalPrice = document.querySelector("[w_el='card_total_price']")
+
+          const addUrl = window.Shopify.routes.root + 'cart/add.js';
 
           quantityIncrease.forEach((item) => {
             item.addEventListener('click', () => {
