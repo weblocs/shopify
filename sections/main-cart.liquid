@@ -132,6 +132,18 @@
               let quantity = item.parentElement.querySelector("[w_el='quantity_input']").value;
               quantity++;
               item.parentElement.querySelector("[w_el='quantity_input']").value = quantity;
+
+              fetch(`${routes.cart_url}?section_id=main-cart-items`)
+              .then((response) => console.log(response.text()))
+              // .then((responseText) => {
+              //   const html = new DOMParser().parseFromString(responseText, 'text/html');
+              //   const sourceQty = html.querySelector('cart-items');
+              //   this.innerHTML = sourceQty.innerHTML;
+              // })
+              .catch((e) => {
+                console.error(e);
+              });
+              
             });
           });
 
