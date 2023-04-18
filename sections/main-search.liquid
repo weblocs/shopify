@@ -36,11 +36,11 @@
         About</a><a class="navbar_link" href="/search" >
         Search</a><a class="button type-border-dark size-small" href="/search" >
         Get started</a><div el='2dfd104a' >
-        <a href="{{ routes.routes.search_url }}" >
+        <a href="{{ routes.search_url }}" >
         <img class="cart-img" el='aefb804a' src='{{ '644df82d-25df-4fc6-b0b8-281885471b0b-search-interface-symbol.svg' | asset_url }} 'alt='undefined' loading="lazy" sizes="(max-width: 600px) 96vw, 700px" width='undefined' height='undefined' >
-        </img></a><a href="{{ routes.routes.account_login_url }}" >
+        </img></a><a href="{{ routes.account_login_url }}" >
         <img class="cart-img" src='{{ '644df82d-25df-4fc6-b0b8-281885471b0b-profile.svg' | asset_url }} 'alt='undefined' loading="lazy" sizes="(max-width: 600px) 96vw, 700px" width='undefined' height='undefined' >
-        </img></a><a class="cart-img_wrap" href="{{ routes.routes.cart_url }}" >
+        </img></a><a class="cart-img_wrap" href="{{ routes.cart_url }}" >
         <img class="cart-img" src='{{ '644df82d-25df-4fc6-b0b8-281885471b0b-shopping-bag (2).svg' | asset_url }} 'alt='undefined' loading="lazy" sizes="(max-width: 600px) 96vw, 700px" width='undefined' height='undefined' >
         </img><div class="cart-img_counter_wrap" >
         <p class="cart-count" >
@@ -52,7 +52,8 @@
         </input><input class="button  size-small" name="" placeholder="" type="submit" value=Search >
         </input></form><div class="space height-24" >
         </div><div el='f1454ad1' >
-        {%- for item in search.results -%}<div >
+        {%- for item in search.results -%}
+          <div >
         <img class="image height-100  width-100" el='7601a9ab' src='{{ item.featured_media | image_url: width: 720 }}' 'alt='undefined' loading="lazy" sizes="(max-width: 600px) 96vw, 700px" width='undefined' height='undefined' >
         </img><h2 class="heading size-heading-3" >
         {{ item.title }}</h2><p class="paragraph " >
