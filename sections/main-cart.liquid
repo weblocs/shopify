@@ -127,13 +127,7 @@
           const finalLinePrice = document.querySelector("[w_el='final_line_price']")
           const cardTotalPrice = document.querySelector("[w_el='card_total_price']")
 
-          function updateCartButton() {
-
-  
-
-
           quantityIncrease.forEach((item) => {
-        
             item.addEventListener('click', () => {
               let quantity = item.parentElement.querySelector("[w_el='quantity_input']").value;
               quantity++;
