@@ -129,7 +129,6 @@
 
           quantityIncrease.forEach((item) => {
             item.addEventListener('click', () => {
-              console.log("+")
               let quantity = item.parentElement.querySelector("[w_el='quantity_input']").value;
               quantity++;
               item.parentElement.querySelector("[w_el='quantity_input']").value = quantity;
@@ -139,8 +138,10 @@
           quantityDecrease.forEach((item) => {
             item.addEventListener('click', () => {
               let quantity = item.parentElement.querySelector("[w_el='quantity_input']").value;
-              quantity--;
-              item.parentElement.querySelector("[w_el='quantity_input']").value = quantity;
+              if(quantity > 1) {
+                quantity--;
+                item.parentElement.querySelector("[w_el='quantity_input']").value = quantity;
+              }
             });
           });
 
