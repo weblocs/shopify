@@ -127,15 +127,22 @@
           const finalLinePrice = document.querySelector("[w_el='final_line_price']")
           const cardTotalPrice = document.querySelector("[w_el='card_total_price']")
 
-          quantityDecrease.forEach((item) => {
+          quantityIncrease.forEach((item) => {
             item.addEventListener('click', () => {
+              console.log("+")
               let quantity = item.parentElement.querySelector("[w_el='quantity_input']").value;
               quantity++;
               item.parentElement.querySelector("[w_el='quantity_input']").value = quantity;
             });
           });
-          
-          
+
+          quantityDecrease.forEach((item) => {
+            item.addEventListener('click', () => {
+              let quantity = item.parentElement.querySelector("[w_el='quantity_input']").value;
+              quantity--;
+              item.parentElement.querySelector("[w_el='quantity_input']").value = quantity;
+            });
+          });
 
           function getFinalLinePrice(variantId, quantity) {
             
