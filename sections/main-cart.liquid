@@ -70,7 +70,7 @@
         {{ item.original_price | money }}</p></div></div><div class="orders_column" >
         </div><div class="orders_column" el='27f70bdf' >
         <div class="cart_quantity" >
-        <p class="cart_quantity_button" w_el='quantity_decrease'>
+        <p class="cart_quantity_button" w_el='quantity_decrease' product_id='{{ item.id }}'>
         -</p><input class="cart_quantity_input" name="" placeholder="1" w_el='quantity_input' type="undefined" value='{{ item.quantity }}' >
         </input><p class="cart_quantity_button" w_el='quantity_increase' product_id='{{ item.id }}'>
         +</p></div><a el='603ff912' href="{{ item.url_to_remove }}" >
@@ -157,19 +157,20 @@
               if(quantity > 1) {
                 quantity--;
                 item.parentElement.querySelector("[w_el='quantity_input']").value = quantity;
+                
                 fetch(window.Shopify.routes.root + 'cart/add.js', {
-               method: 'POST',
-               headers: {
-                 'Content-Type': 'application/json'
-               },
-               body: JSON.stringify({items: [{
-                 id: item.getAttribute('product_id'),
-                 quantity: -1
-               }]})
-               })
-               .then(response => {
-                 console.log(response.json())
-              })
+                 method: 'POST',
+                 headers: {
+                   'Content-Type': 'application/json'
+                 },
+                 body: JSON.stringify({items: [{
+                   id: item.getAttribute('product_id'),
+                   quantity: -1
+                 }]})
+                 })
+                 .then(response => {
+                   console.log(response.json())
+                })
               }
             });
           });
