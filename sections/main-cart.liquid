@@ -158,7 +158,7 @@
                 quantity--;
                 item.parentElement.querySelector("[w_el='quantity_input']").value = quantity;
                 
-                fetch(window.Shopify.routes.root + 'cart/add.js', {
+                fetch(window.Shopify.routes.root + 'cart/change.js', {
                  method: 'POST',
                  headers: {
                    'Content-Type': 'application/json'
