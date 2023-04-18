@@ -126,10 +126,18 @@
           const quantityInput = document.querySelector("[w_el='quantity_input']")
           const finalLinePrice = document.querySelector("[w_el='finalLinePrice']")
           const cardTotalPrice = document.querySelector("[w_el='card_total_price']")
-          let quantity = quantityInput
+          let quantity = quantityInput.value;
       
           quantityIncrease.addEventListener('click', () => {
-            console.log("1")
+            quantity++;
+            quantityInput.value = quantity;
+            console.log(quantityInput)
+          })
+
+          quantityDecrease.addEventListener('click', () => {
+            quantity--;
+            quantityInput.value = quantity;
+            console.log(quantityInput)
           })
           </script>
       
