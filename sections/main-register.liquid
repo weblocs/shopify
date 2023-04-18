@@ -36,24 +36,25 @@
         About</a><a class="navbar_link" href="/search" >
         Search</a><a class="button type-border-dark size-small" href="/search" >
         Get started</a><div el='1b5d9f75' >
-        <a href="{{ routes.routes.search_url }}" >
+        <a href="{{ routes.search_url }}" >
         <img class="cart-img" el='371fe646' src='{{ '644df82d-25df-4fc6-b0b8-281885471b0b-search-interface-symbol.svg' | asset_url }} 'alt='undefined' loading="lazy" sizes="(max-width: 600px) 96vw, 700px" width='undefined' height='undefined' >
-        </img></a><a href="{{ routes.routes.account_login_url }}" >
+        </img></a><a href="{{ routes.account_login_url }}" >
         <img class="cart-img" src='{{ '644df82d-25df-4fc6-b0b8-281885471b0b-profile.svg' | asset_url }} 'alt='undefined' loading="lazy" sizes="(max-width: 600px) 96vw, 700px" width='undefined' height='undefined' >
-        </img></a><a class="cart-img_wrap" href="{{ routes.routes.cart_url }}" >
+        </img></a><a class="cart-img_wrap" href="{{ routes.cart_url }}" >
         <img class="cart-img" src='{{ '644df82d-25df-4fc6-b0b8-281885471b0b-shopping-bag (2).svg' | asset_url }} 'alt='undefined' loading="lazy" sizes="(max-width: 600px) 96vw, 700px" width='undefined' height='undefined' >
         </img><div class="cart-img_counter_wrap" >
         <p class="cart-count" >
         {{ cart.item_count }}</p></div></a></div></div></div></div></div></div><div class="section" >
         <div class="container align-center" >
         <h2 class="heading size-heading-2" el='7c6155d5' >
-        Register</h2>{%- form 'create_customer', class:'sign-in_form' -%} <input class="input" el='3eda2afa' name="customer[first-name]" placeholder="First name" type="text" >
+        Register</h2>{%- form 'create_customer', class:'sign-in_form' -%}
+          <input class="input" el='3eda2afa' name="customer[first-name]" placeholder="First name" type="text" >
         </input><input class="input" el='f514c1c0' name="customer[last-name]" placeholder="Last name" type="text" >
         </input><input class="input" el='36493cc1' name="customer[email]" placeholder="Email" type="email" >
         </input><input class="input" el='0a703155' name="customer[password]" placeholder="Password" type="password" >
         </input><input class="button" name="" placeholder="" type="submit" value=Sign up >
         </input><div el='5cc2a4b9' >
-        <a href="{{ routes.account_login_url }}" >
+        <a href="{{ account_login_url }}" >
         Log in</a></div>{%- endform -%} </div></div><div >
         <div class="footer" >
         <div class="container" >
