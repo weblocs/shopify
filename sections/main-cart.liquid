@@ -118,7 +118,9 @@
         </img></a></div><div class="flex gap-16" >
         <a href="/undefined" >
         Polityka prywatności</a></div></div></div></div></div></body><script>document.querySelector('[nav-trigger]').addEventListener("click", function() {document.querySelector('[nav-list]').classList.toggle('is-open')});</script>
- <script>
+ 
+          
+        <script>
           const quantityIncrease = document.querySelector("[w_el='quantity_increase']")
           const quantityDecrease = document.querySelector("[w_el='quantity_decrease']")
           const quantityInput = document.querySelector("[w_el='quantity_input']")
@@ -127,22 +129,8 @@
           let quantity = quantityInput
       
           quantityIncrease.addEventListener('click', () => {
-            resetSection.classList.add('is-visible')
-            loginSection.classList.add('is-hidden')
-          })
-      
-          resetHide.addEventListener('click', () => {
-            resetSection.classList.remove('is-visible')
-            loginSection.classList.remove('is-hidden')
+            
           })
           </script>
-          <style>
-          [w_el='reset_section']:not(.is-visible) {
-            display: none;
-          }
-          [w_el='login_section'].is-hidden {
-            display: none;
-          }
-        </script>
       
       </body></html>
