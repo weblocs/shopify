@@ -128,6 +128,7 @@
           const cardTotalPrice = document.querySelector("[w_el='card_total_price']")
 
           quantityIncrease.forEach((item) => {
+            console.log(item)
             item.addEventListener('click', () => {
               let quantity = item.closest("[w_el='quantity_input']").value;
               quantity++;
