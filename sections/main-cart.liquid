@@ -70,16 +70,16 @@
         {{ item.original_price | money }}</p></div></div><div class="orders_column" >
         </div><div class="orders_column" el='27f70bdf' >
         <div class="cart_quantity" >
-        <p class="cart_quantity_button" >
-        -</p><input class="cart_quantity_input" name="" placeholder="1" type="undefined" >
-        </input><p class="cart_quantity_button" >
+        <p class="cart_quantity_button" w_el='quantity_decrease'>
+        -</p><input class="cart_quantity_input" name="" placeholder="1" w_el='quantity_input'type="undefined" >
+        </input><p class="cart_quantity_button" w_el='quantity_increase'>
         +</p></div><a el='603ff912' href="{{ item.url_to_remove }}" >
         Remove</a></div><div class="orders_column" >
-        <p class="paragraph " >
+        <p class="paragraph " w_el='final_line_price'>
         {{ item.final_line_price | money }}</p></div></div>{%- endfor -%}</div><div el='4c941ad6' >
         <div el='240ae526' >
         <p class="paragraph size-large" el='f07536ab' >
-        Subtotal</p><p class="paragraph size-large" el='6e3358ee' >
+        Subtotal</p><p class="paragraph size-large" el='6e3358ee' w_el='card_total_price'>
         {{ cart.total_price | money_with_currency }}</p></div><p class="paragraph size-tiny" el='9ea8606f' >
         <em>Shipping &amp; taxes calculated at checkout</em><em></em></p><div class="button-wrapper" >
         <a class="button type-secondary" href="/cart" >
