@@ -58,14 +58,14 @@
         {{ product.title }}</h2><h2 class="tagline" >
         {{ product.price | money }}</h2><p class="paragraph   " >
         {{ product.description }}</p><div class="space height-48" >
-        </div><div el='a8f6e7da' >
+        </div>{%- if !product.has_only_default_variant -%}<div el='a8f6e7da' >
         {%- for item in product.options_with_values -%}
           <div >
         <p class="paragraph " el='ec17bae6' >
         {{ item.name }}</p><div el='e6d8b28c' >
         {%- for item in option.values -%}
           <p class="paragraph " el='d3c63012' >
-        {{ item.name }}</p>{%- endfor -%}</div></div>{%- endfor -%}</div><div class="space height-48" >
+        {{ item.name }}</p>{%- endfor -%}</div></div>{%- endfor -%}</div>{%- endif -%}<div class="space height-48" >
         </div><div class="cart_quantity" >
         <p class="cart_quantity_button" >
         -</p><input class="cart_quantity_input" name="" placeholder="1" type="undefined" >
