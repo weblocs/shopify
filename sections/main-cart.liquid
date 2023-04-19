@@ -124,31 +124,31 @@
           const cartItems = document.querySelectorAll("[w_el='cart_item']")
           
           
-          const finalLinePrice = document.querySelector("[w_el='final_line_price']")
+          
           const cardTotalPrice = document.querySelector("[w_el='card_total_price']")
 
 
-          cartItems.forEach((item) => {
+          cartItems.forEach((item, index) => {
             const quantityInput = item.querySelector("[w_el='quantity_input']")
             const quantityIncrease = item.querySelector("[w_el='quantity_increase']")
             const quantityDecrease = item.querySelector("[w_el='quantity_decrease']")
             
             quantityInput.addEventListener('change', (e) => {
               let quantity = e.target.value;
-              updateCart(item, quantity)
+              updateCart(item, quantity, index)
             });
 
             quantityIncrease.addEventListener('click', () => {
               let quantity = getLineQuantity(item);
               quantity++;
-              updateCart(item, quantity)
+              updateCart(item, quantity, index)
             });
 
             quantityDecrease.addEventListener('click', () => {
               let quantity = getLineQuantity(item);
               if(quantity > 1) {
                 quantity--;
-                updateCart(item, quantity)
+                updateCart(item, quantity, index)
               }
             });
             
@@ -158,7 +158,7 @@
             return item.querySelector("[w_el='quantity_input']").value
           }
 
-          function updateCart(item, quantity) {
+          function updateCart(item, quantity, index) {
             item.querySelector("[w_el='quantity_input']").value = quantity; 
             fetch(window.Shopify.routes.root + 'cart/update.js', {
                  method: 'POST',
@@ -170,7 +170,8 @@
                  }})
                  })
                  .then(response => {
-                   console.log(response.json())
+                   item.querySelector("[w_el='final_line_price']") = response.json().items[index].final_line_price
+                   // console.log(response.json())
             })
           }
           </script>
