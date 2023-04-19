@@ -130,7 +130,7 @@
 
 
           cartItem.forEach((item) => {
-            const quantityInput = item.querySelectorAll("[w_el='quantity_input']")
+            const quantityInput = item.querySelector("[w_el='quantity_input']")
             quantityInput.addEventListener('change', (e) => {
               let quantity = e.target.value;
               updateCart(item, quantity)
