@@ -122,6 +122,7 @@
     <script>
           const cartItems = document.querySelectorAll("[w_el='cart_item']")
           const cardTotalPrice = document.querySelector("[w_el='card_total_price']")
+          const cardTotalCount = document.querySelector("[w_el='item_count']")
 
 
           cartItems.forEach((item, index) => {
@@ -171,6 +172,7 @@
                    console.log(data)
                    item.querySelector("[w_el='final_line_price']").innerHTML = (data.items[index].final_line_price / 100).toFixed(2) + " " + data.currency
                    cardTotalPrice.innerHTML = (data.total_price / 100).toFixed(2) + " " + data.currency
+                   cardTotalCount.innerHTML = data.item_count
                 })
             })
           }
