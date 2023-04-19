@@ -131,7 +131,7 @@
 
           quantityIncrease.forEach((item) => {
             item.addEventListener('click', () => {
-              let quantity = item.parentElement.querySelector("[w_el='quantity_input']").value;
+              let quantity = getLineQuantity(item);
               quantity++;
               updateCart(item, quantity)
             });
@@ -139,13 +139,17 @@
 
           quantityDecrease.forEach((item) => {
             item.addEventListener('click', () => {
-              let quantity = item.parentElement.querySelector("[w_el='quantity_input']").value;
+              let quantity = getLineQuantity(item);
               if(quantity > 1) {
                 quantity--;
                 updateCart(item, quantity)
               }
             });
           });
+
+          function getLineQuantity(item) {
+            return item.parentElement.querySelector("[w_el='quantity_input']").value
+          }
 
           function updateCart(item, quantity) {
             item.parentElement.querySelector("[w_el='quantity_input']").value = quantity; 
