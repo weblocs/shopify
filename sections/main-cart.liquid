@@ -131,7 +131,7 @@
 
           cartItems.forEach((item) => {
             const quantityInput = item.querySelector("[w_el='quantity_input']")
-            const quantityIncrease = document.querySelector("[w_el='quantity_increase']")
+            const quantityIncrease = item.querySelector("[w_el='quantity_increase']")
             
             quantityInput.addEventListener('change', (e) => {
               let quantity = e.target.value;
@@ -162,7 +162,7 @@
           }
 
           function updateCart(item, quantity) {
-            // item.querySelector("[w_el='quantity_input']").value = quantity; 
+            item.querySelector("[w_el='quantity_input']").value = quantity; 
             fetch(window.Shopify.routes.root + 'cart/update.js', {
                  method: 'POST',
                  headers: {
