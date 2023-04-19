@@ -170,9 +170,12 @@
                  }})
                  })
                  .then(response => {
-                   const data = response.json()
+                   return response.json()
+                 .then(function(data) {
+                   console.log(JSON.parse(data));
                    // item.querySelector("[w_el='final_line_price']") = data.items[index].final_line_price
-                   console.log(data.getData())
+                  // return userid;
+                })
             })
           }
           </script>
