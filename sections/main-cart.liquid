@@ -173,7 +173,7 @@
                    return response.json()
                  .then(function(data) {
                    console.log(data)
-                   item.querySelector("[w_el='final_line_price']").innerHTML = data.items[index].final_line_price | money
+                   item.querySelector("[w_el='final_line_price']").innerHTML = data.items[index].final_line_price
                 })
             })
           }
