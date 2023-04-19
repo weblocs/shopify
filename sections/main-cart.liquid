@@ -61,7 +61,7 @@
         <p class="paragraph " >
         Total</p></div></div><div class="cart-list" >
         {%- for item in cart.items -%}
-          <div class="orders_row" >
+          <div class="orders_row" w_el="cart_item" product_id='{{ item.id }}'>
         <div class="orders_column" el='0c8d02d8' >
         <img class="item-image" el='aad560d3' src='{{ item.image | image_url: width: 720 }}' 'alt='undefined' loading="lazy" sizes="(max-width: 600px) 96vw, 700px" width='undefined' height='undefined' >
         </img><div >
@@ -121,16 +121,17 @@
  
           
         <script>
+          const cartItem = document.querySelectorAll("[w_el='cartItem']")
           const quantityIncrease = document.querySelectorAll("[w_el='quantity_increase']")
           const quantityDecrease = document.querySelectorAll("[w_el='quantity_decrease']")
-          const quantityInput = document.querySelectorAll("[w_el='quantity_input']")
+          
           const finalLinePrice = document.querySelector("[w_el='final_line_price']")
           const cardTotalPrice = document.querySelector("[w_el='card_total_price']")
 
-          const addUrl = window.Shopify.routes.root + 'cart/add.js';
 
-          quantityInput.forEach((item) => {
-            item.addEventListener('change', (e) => {
+          cartItem.forEach((item) => {
+            const quantityInput = item.querySelectorAll("[w_el='quantity_input']")
+            quantityInput.addEventListener('change', (e) => {
               let quantity = e.target.value;
               updateCart(item, quantity)
             });
@@ -159,7 +160,7 @@
           }
 
           function updateCart(item, quantity) {
-            item.parentElement.querySelector("[w_el='quantity_input']").value = quantity; 
+            item.querySelector("[w_el='quantity_input']").value = quantity; 
             fetch(window.Shopify.routes.root + 'cart/update.js', {
                  method: 'POST',
                  headers: {
