@@ -133,7 +133,6 @@
             item.addEventListener('click', () => {
               let quantity = item.parentElement.querySelector("[w_el='quantity_input']").value;
               quantity++;
-              item.parentElement.querySelector("[w_el='quantity_input']").value = quantity; 
               updateCart(item, quantity)
             });
           });
@@ -143,13 +142,13 @@
               let quantity = item.parentElement.querySelector("[w_el='quantity_input']").value;
               if(quantity > 1) {
                 quantity--;
-                item.parentElement.querySelector("[w_el='quantity_input']").value = quantity;
                 updateCart(item, quantity)
               }
             });
           });
 
           function updateCart(item, quantity) {
+            item.parentElement.querySelector("[w_el='quantity_input']").value = quantity; 
             fetch(window.Shopify.routes.root + 'cart/update.js', {
                  method: 'POST',
                  headers: {
