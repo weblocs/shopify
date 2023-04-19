@@ -170,8 +170,8 @@
                    return response.json()
                  .then(function(data) {
                    console.log(data)
-                   item.querySelector("[w_el='final_line_price']").innerHTML = (data.items[index].final_line_price / 100) + data.currency
-                   cardTotalPrice.innerHTML = data.total_price
+                   item.querySelector("[w_el='final_line_price']").innerHTML = (data.items[index].final_line_price / 100).toFixed(2) + " " + data.currency
+                   cardTotalPrice.innerHTML = (data.total_price / 100).toFixed(2) + " " + data.currency
                 })
             })
           }
