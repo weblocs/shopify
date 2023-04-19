@@ -68,8 +68,8 @@
         <p class="paragraph size-large width-475 " >
         Addresses</p><div class="space height-16" >
         </div><p class="paragraph " >
-        {{ customer.default_address.address1 }}</p><p class="paragraph " >
-        {{ customer.default_address.address2 }}</p><p class="paragraph " >
+        {{ customer.default_address.address1 }}</p>{%- if customer.default_address.address2 != blank -%}<p class="paragraph " >
+        {{ customer.default_address.address2 }}</p>{%- endif -%}<p class="paragraph " >
         {{ customer.default_address.city }}</p></div></div></div></div><div >
         <div class="footer" >
         <div class="container" >
