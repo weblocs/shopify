@@ -123,11 +123,18 @@
         <script>
           const quantityIncrease = document.querySelectorAll("[w_el='quantity_increase']")
           const quantityDecrease = document.querySelectorAll("[w_el='quantity_decrease']")
-          const quantityInput = document.querySelector("[w_el='quantity_input']")
+          const quantityInput = document.querySelectorAll("[w_el='quantity_input']")
           const finalLinePrice = document.querySelector("[w_el='final_line_price']")
           const cardTotalPrice = document.querySelector("[w_el='card_total_price']")
 
           const addUrl = window.Shopify.routes.root + 'cart/add.js';
+
+          quantityInput.forEach((item) => {
+            item.addEventListener('change', (e) => {
+              let quantity = e.target.value;
+              updateCart(item, quantity)
+            });
+          });
 
           quantityIncrease.forEach((item) => {
             item.addEventListener('click', () => {
