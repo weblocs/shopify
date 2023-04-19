@@ -121,7 +121,7 @@
  
           
         <script>
-          const cartItems = document.querySelectorAll("[w_el='cartItem']")
+          const cartItems = document.querySelectorAll("[w_el='cart_item']")
           const quantityIncrease = document.querySelectorAll("[w_el='quantity_increase']")
           const quantityDecrease = document.querySelectorAll("[w_el='quantity_decrease']")
           
@@ -130,11 +130,8 @@
 
 
           cartItems.forEach((item) => {
-            console.log(item)
             const quantityInput = item.querySelector("[w_el='quantity_input']")
-            
             quantityInput.addEventListener('change', (e) => {
-              console.log("1")
               let quantity = e.target.value;
               updateCart(item, quantity)
             });
