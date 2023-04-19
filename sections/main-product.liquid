@@ -58,7 +58,7 @@
         {{ product.title }}</h2><h2 class="tagline" >
         {{ product.price | money }}</h2><p class="paragraph   " >
         {{ product.description }}</p><div class="space height-48" >
-        </div>{%- if !product.has_only_default_variant -%}<div el='a8f6e7da' >
+        </div>{%- if product.has_only_default_variant == false -%}<div el='a8f6e7da' >
         {%- for item in product.options_with_values -%}
           <div >
         <p class="paragraph " el='ec17bae6' >
