@@ -122,9 +122,6 @@
           
         <script>
           const cartItems = document.querySelectorAll("[w_el='cart_item']")
-          
-          
-          
           const cardTotalPrice = document.querySelector("[w_el='card_total_price']")
 
 
@@ -174,6 +171,7 @@
                  .then(function(data) {
                    console.log(data)
                    item.querySelector("[w_el='final_line_price']").innerHTML = data.items[index].final_line_price
+                   cardTotalPrice.innerHTML = data.total_price
                 })
             })
           }
